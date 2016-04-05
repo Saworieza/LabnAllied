@@ -1,0 +1,43 @@
+<% @title="Cost Setups" %>
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12">
+  <div class="box">
+    <div class="box-header with-border">
+      <h1 class="box-title">Cost Setup Listings</h1>
+    
+      <h3 class="box-title pull-right ">
+        <%= link_to "New Cost Setup", new_cost_setup_path, class: "btn btn-warning btn-sm" %>
+      </h3>
+    </div>
+    <div class="box-body">
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th>Cost code</th>
+          <th>Cost type</th>
+          <th>Cost type setup</th>
+          <th>Currency</th>
+          <th>Currency rate</th>
+          <th colspan="2"></th>
+        </tr>
+        <% @cost_setups.each do |cost_setup| %>
+          <tr>
+            <td><%= cost_setup.cost_code %></td>
+            <td><%= cost_setup.cost_type %></td>
+            <td><%= cost_setup.cost_type_setup %></td>
+            <td><%= cost_setup.currency %></td>
+            <td><%= cost_setup.currency_rate %></td>
+            <td><%= link_to 'View', cost_setup %></td>
+            <td><%= link_to 'Delete', cost_setup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><%= will_paginate @cost_setups, renderer: BootstrapPagination::Rails %></li>
+      </ul>
+    </div>
+  </div><!-- /.box -->
+</div><!-- /.col -->
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idf form nos:</strong>
+  <%= @customs_service_department.idf_form_nos %>
+</p>
+
+<p>
+  <strong>Payment date:</strong>
+  <%= @customs_service_department.payment_date %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @customs_service_department.rate %>
+</p>
+
+<%= link_to 'Edit', edit_customs_service_department_path(@customs_service_department) %> |
+<%= link_to 'Back', customs_service_departments_path %>

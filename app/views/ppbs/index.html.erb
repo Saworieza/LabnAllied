@@ -1,0 +1,41 @@
+<% @title="PPBS" %>
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12">
+  <div class="box">
+    <div class="box-header with-border">
+      <h1 class="box-title">Pharmaceutical Listings</h1>    
+        <h3 class="box-title pull-right ">
+          <%= link_to 'Create Pharmacy', new_ppb_path, class: "btn btn-warning btn-sm" %>
+        </h3>
+    </div>
+    <div class="box-body">
+      <table class="table table-bordered table-hover">
+          <tr>
+            <th>Ucr number</th>
+            <th>Application date</th>
+            <th colspan="2"></th>
+          </tr>
+          <tr>
+          <% @ppbs.each do |ppb| %>
+          <tr>
+            <td><%= ppb.UCR_Number %></td>
+            <td><%= ppb.application_date %></td>
+            <td><%= link_to 'Show', ppb %></td>
+            <td><%= link_to 'Delete', ppb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tr>
+      </table>
+    </div>
+    <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><%= will_paginate @ppbs, renderer: BootstrapPagination::Rails %></li>
+      </ul>
+    </div>
+  </div><!-- /.box -->
+</div><!-- /.col -->
+
+
+              
+        

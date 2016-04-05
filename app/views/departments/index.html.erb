@@ -1,0 +1,49 @@
+<% @title="Departments" %>
+<p id="notice"><%= notice %></p>
+
+
+<div class="col-md-12">
+  <div class="box">
+    <div class="box-header with-border">
+      <h1 class="box-title">Department Data</h1>
+    
+      <h3 class="box-title pull-right ">
+        <%= link_to 'Add Department', new_department_path, class: "btn btn-warning btn-sm" %>
+      </h3>
+    </div>
+    <div class="box-body">
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th>Name</th>
+          <th>Code</th>
+          <th>Type</th>
+          <th>Sub department</th>
+          <th colspan="2"></th>
+        </tr>
+        <tr>
+         <% @departments.each do |department| %>
+          <tr>
+            <td><%= department.name %></td>
+            <td><%= department.code %></td>
+            <td><%= department.department_type %></td>
+            <td><%= department.sub_department %></td>
+            <td><%= link_to 'Show', department %></td>
+            <td><%= link_to 'Delete', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tr>
+      </table>
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><%= will_paginate @departments, renderer: BootstrapPagination::Rails %></li>
+      </ul>
+    </div>
+  </div><!-- /.box -->
+</div><!-- /.col -->
+
+
+
+
+
+

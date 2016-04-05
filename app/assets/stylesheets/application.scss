@@ -1,0 +1,127 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+
+ *= require material_icons
+ *= require_tree .
+ *= require jquery-jvectormap-1.2.2
+ *= require dataTables/jquery.dataTables
+ *= require jquery-ui
+ *= require slider
+ *= require bootstrap3-wysihtml5
+ *= require fullcalendar
+ *= require bootstrap-timepicker
+ *= require morris
+ *= require daterangepicker-bs3
+ *= require bootstrap-colorpicker
+ *= require datepicker3
+ *= require toastr.min
+ *= require bootstrap
+ *= require AdminLTE/AdminLTE
+ *= require AdminLTE/skins/skin-blue
+ *= require_self
+
+
+
+/* General Styling */
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500);
+@import "bootstrap-sprockets"; @import "bootstrap";
+@import "material";
+
+
+body{
+  color:#000;
+}
+
+.navbar-brand > a > img{
+  width:100px;
+  height:45px;
+  margin-top:-10px;
+}
+.navbar-container{
+  box-shadow: 0px 2px 3px #888888;
+}
+/* /General Stylling*/
+.boxy{
+  border:thin solid silver;
+  border-top:3px solid lightblue;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* rotate table head style sheets*/
+.table-header-rotated th.row-header{
+  width: auto;
+}
+
+.table-header-rotated td{
+  width: 40px;
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table-header-rotated th.rotate-45{
+  height: 80px;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  position: relative;
+  vertical-align: bottom;
+  padding: 0;
+  font-size: 12px;
+  line-height: 0.8;
+}
+
+.table-header-rotated th.rotate-45 > div{
+  position: relative;
+  top: 0px;
+  left: 40px; /* 80 * tan(45) / 2 = 40 where 80 is the height on the cell and 45 is the transform angle*/
+  height: 100%;
+  -ms-transform:skew(-45deg,0deg);
+  -moz-transform:skew(-45deg,0deg);
+  -webkit-transform:skew(-45deg,0deg);
+  -o-transform:skew(-45deg,0deg);
+  transform:skew(-45deg,0deg);
+  overflow: hidden;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+
+.table-header-rotated th.rotate-45 span {
+  -ms-transform:skew(45deg,0deg) rotate(315deg);
+  -moz-transform:skew(45deg,0deg) rotate(315deg);
+  -webkit-transform:skew(45deg,0deg) rotate(315deg);
+  -o-transform:skew(45deg,0deg) rotate(315deg);
+  transform:skew(45deg,0deg) rotate(315deg);
+  position: absolute;
+  bottom: 30px; /* 40 cos(45) = 28 with an additional 2px margin*/
+  left: -25px; /*Because it looked good, but there is probably a mathematical link here as well*/
+  display: inline-block;
+  // width: 100%;
+  width: 85px; /* 80 / cos(45) - 40 cos (45) = 85 where 80 is the height of the cell, 40 the width of the cell and 45 the transform angle*/
+  text-align: left;
+  // white-space: nowrap; /*whether to display in one line or not*/
+}
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #FFF none repeat scroll 0% 0%;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+    border-top: 3px solid #D2D6DE;
+    clear:both;
+  }
+

@@ -1,0 +1,229 @@
+<%= form_for(@shipment) do |f| %>
+  <% if @shipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shipment.errors.count, "error") %> prohibited this shipment from being saved:</h2>
+
+      <ul>
+      <% @shipment.errors.full_messages.each do |message| %>
+
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputPassword1">Country Of Origin</label>
+    <%= f.text_field :country_of_origin, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Supplier</label>
+    <%= f.text_field :supplier, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+   <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Nature of Supply</label>
+    <%= f.text_field :supply_nature, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Custom Entry Number</label>
+    <%= f.number_field :custom_entry_nos, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+     <div class="form-group">
+    <label for="exampleInputFile">Custom Exchange Rate</label>
+    <%= f.text_field :custom_exchange_rate, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+     <div class="form-group">
+    <label for="exampleInputFile">Custom Value</label>
+    <%= f.text_field :custom_value, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+     <div class="form-group">
+    <label for="exampleInputFile">Agent Inventory Nos</label>
+    <%= f.text_field :agent_inv_nos, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+     <div class="form-group">
+    <label for="exampleInputFile">Quantity</label>
+    <%= f.text_field :Quantity, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total Cost in USD </label>
+    <%= f.text_field :total_cost_usd, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+     <div class="form-group">
+    <label for="exampleInputFile">Total Freight in USD </label>
+    <%= f.text_field :total_freight_usd, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total insurance in KES </label>
+    <%= f.text_field :total_insurance_Kes, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total Pre_Idf </label>
+    <%= f.text_field :total_pre_idf, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total IDF Balance </label>
+    <%= f.text_field :total_idf_bal, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+ 
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total Railway Levy </label>
+    <%= f.text_field :total_railway_levy, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+     <div class="form-group">
+    <label for="exampleInputFile">Total KAA Levy </label>
+    <%= f.text_field :total_kaa_levy, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+</div>
+ 
+
+ <div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total Shipping Line Charges </label>
+    <%= f.text_field :total_shipping_line_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total Port Handling Charges </label>
+    <%= f.text_field :total_port_handling_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+     <div class="form-group">
+    <label for="exampleInputFile">Total Transport From MSA </label>
+    <%= f.text_field :total_transport_from_msa, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+</div>
+
+
+
+ 
+
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total Offloading Expenses </label>
+    <%= f.text_field :total_offloading_expenses, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+     <div class="form-group">
+    <label for="exampleInputFile">Total Bank Charges </label>
+    <%= f.text_field :total_bank_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+     <div class="form-group">
+    <label for="exampleInputFile">Total Services Charges </label>
+    <%= f.text_field :total_services_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total Handling Charges </label>
+    <%= f.text_field :documents_handling_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="exampleInputFile">Total Cost in USD </label>
+    <%= f.text_field :total_other_costs, :step => 'any', class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+     <div class="checkbox"><!-- annoying little bastard -->
+  <label for="exampleIputFile">Split?</label>
+     <%= f.check_box :shared, class: "iCheck-helper flat-red", type: "radio" %> 
+  </div>
+  </div>
+</div>
+ 
+ <div class="jumbotron">
+    <div>
+   <%= f.fields_for :orders do |builder| %>
+    <%= render 'order_fields', f: builder %>
+    <%end%>
+    <div>
+     <a class="my-nice-button">
+      <i class="fa fa-plus"></i>
+      <%= link_to_add_fields "Add Product", f, :orders %>
+    </div>
+    </a>
+</div>
+  </div>
+  
+
+ 
+
+ <div class="box-footer">
+    <%= f.submit "Submit", class: "btn btn-success btn-sm" %>
+      <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  </div>
+
+<% end %>     
+
+

@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customs entry number:</strong>
+  <%= @simba_system.customs_entry_number %>
+</p>
+
+<p>
+  <strong>Customs entry date:</strong>
+  <%= @simba_system.customs_entry_date %>
+</p>
+
+<p>
+  <strong>Exchange rate:</strong>
+  <%= @simba_system.exchange_rate %>
+</p>
+
+<p>
+  <strong>Total freight usd:</strong>
+  <%= @simba_system.total_freight_usd %>
+</p>
+
+<p>
+  <strong>Total insurance kes:</strong>
+  <%= @simba_system.total_insurance_Kes %>
+</p>
+
+<p>
+  <strong>Total pre idf:</strong>
+  <%= @simba_system.total_pre_idf %>
+</p>
+
+<p>
+  <strong>Total railway levy:</strong>
+  <%= @simba_system.total_railway_levy %>
+</p>
+
+<p>
+  <strong>Total kaa levy:</strong>
+  <%= @simba_system.total_kaa_levy %>
+</p>
+
+<p>
+  <strong>Total shipping line charges:</strong>
+  <%= @simba_system.total_shipping_line_charges %>
+</p>
+
+<p>
+  <strong>Total transport from msa:</strong>
+  <%= @simba_system.total_transport_from_msa %>
+</p>
+
+<p>
+  <strong>Total port handling charges:</strong>
+  <%= @simba_system.total_port_handling_charges %>
+</p>
+
+<p>
+  <strong>Total offloading expenses:</strong>
+  <%= @simba_system.total_offloading_expenses %>
+</p>
+
+<p>
+  <strong>Total bank charges:</strong>
+  <%= @simba_system.total_bank_charges %>
+</p>
+
+<p>
+  <strong>Total services charges:</strong>
+  <%= @simba_system.total_services_charges %>
+</p>
+
+<p>
+  <strong>Documents handling charges:</strong>
+  <%= @simba_system.documents_handling_charges %>
+</p>
+
+<p>
+  <strong>Total other costs:</strong>
+  <%= @simba_system.total_other_costs %>
+</p>
+
+<%= link_to 'Edit', edit_simba_system_path(@simba_system) %> |
+<%= link_to 'Back', simba_systems_path %>

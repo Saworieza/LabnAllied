@@ -1,0 +1,93 @@
+<% @title="Bill Of Ladings" %>
+<p id="notice"><%= notice %></p>
+
+
+<div class="col-md-12">
+  <div class="box">
+    <div class="box-header with-border">
+      <h1 class="box-title">Bill Of Landing Listings</h1>
+    
+      <h3 class="box-title pull-right ">
+        <%= link_to "New Bill Of Landing", new_bill_of_ladings_path, class: "btn btn-warning btn-sm" %>
+      </h3>
+    </div>
+    <div class="box-body">
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th>Bl number</th>
+          <th>Bl date</th>
+          <th colspan="2"></th>
+        </tr>
+
+          <% @bill_of_ladings.each do |bill_of_lading| %>
+            <tr>
+              <td><%= bill_of_lading.bl_number %></td>
+              <td><%= bill_of_lading.bl_date %></td>
+              <td><%= link_to 'Show', bill_of_lading %></td>
+              <td><%= link_to 'Delete', bill_of_lading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+      </table>
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><%= will_paginate @bill_of_ladings, renderer: BootstrapPagination::Rails %></li>
+      </ul>
+    </div>
+  </div><!-- /.box -->
+</div><!-- /.col -->
+
+
+
+<!--<div class="content">
+  <section class="content-header">
+  <%= link_to new_bill_of_landing_path, class: "btn btn-info" do %>
+    <i class=""> Add Bill of Landing</i>
+  <%end%>
+    <h1>
+      Bill of Landings
+    </h1>
+    <ol class="breadcrumb">
+      <li class="active">Bill of Landings Data</li>
+    </ol>
+    </section>
+
+    <!-- Main content --
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Recorded Bill Of Landings data</h3>
+            </div>
+            <!-- /.box-header --
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Bl number</th>
+                    <th>Bl date</th>
+                    <th colspan="3"></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @bill_of_ladings.each do |bill_of_lading| %>
+                    <tr>
+                      <td><%= bill_of_lading.bl_number %></td>
+                      <td><%= bill_of_lading.bl_date %></td>
+                      <td><%= link_to 'Show', bill_of_lading %></td>
+                      <td><%= link_to 'Edit', edit_bill_of_lading_path(bill_of_lading) %></td>
+                      <td><%= link_to 'Destroy', bill_of_lading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <%= link_to 'New Bill of lading', new_bill_of_lading_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>-->
+

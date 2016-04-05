@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Insurance name:</strong>
+  <%= image_tag @insurance.avatar.url(:medium) %>
+</p>
+
+<p>
+  <strong>Insurance name:</strong>
+  <%= @insurance.insurance_name %>
+</p>
+
+<p>
+  <strong>Total insurance charges:</strong>
+  <%= @insurance.total_insurance_charges %>
+</p>
+
+<%= link_to 'Edit', edit_insurance_path(@insurance) %> |
+<%= link_to 'Back', insurances_path %>

@@ -1,0 +1,1 @@
+json.extract! @inventory_detail, :id, :inventory_code, :inventory_description, :warehouse_code, :inventory_warehouse, :inventory_groups, :HS_codes, :inventory_unit_price, :inventory_qty, :inventory_UoM, :inventory_category, :created_at, :updated_at

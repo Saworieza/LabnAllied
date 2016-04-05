@@ -1,0 +1,35 @@
+<%= form_for(@department) do |f| %>
+  <% if @department.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@department.errors.count, "error") %> prohibited this department from being saved:</h2>
+
+      <ul>
+      <% @department.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <label for="exampleInputFile">Name</label>
+    <%= f.text_field :name, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Code</label>
+    <%= f.number_field :code, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Type</label>
+    <%= f.text_field :department_type, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Sub Department</label>
+    <%= f.text_field :sub_department, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="box-footer">
+    <%= f.submit "Submit", class: "btn btn-success btn-sm" %>
+      <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  </div
+  <% end %>
+
+

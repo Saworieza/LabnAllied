@@ -1,0 +1,126 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <%= image_tag(current_user.avatar.url(:medium), class: "img-circle", alt: "User Image") %>
+      </div>
+      <div class="text-center info">
+        <p>
+          <a href="#"><i class="fa fa-circle text-success"></i><%= link_to (current_user.username), edit_user_registration_path %></a>
+        </p>
+      </div>
+    </div>
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu">
+      <!--<li class="header">HEADER</li>
+         Optionally, you can add icons to the links -->
+      <li class="active">
+        <%= link_to root_path do %>
+            <i class='fa fa-link'></i>
+            <span>Dashboard</span>
+        <% end %>
+      </li>
+      <li class="">
+        <%= link_to users_path do %>
+            <i class='fa fa-link'></i>
+            <span>Users Setup</span>
+        <% end %>
+      </li>
+      <li class="treeview">
+        <%= link_to do %>
+            <i class='fa fa-link'></i>
+            <span>Admin Setup</span>
+            <i class='fa fa-angle-left pull-right'></i>
+        <% end %>
+        <ul class="treeview-menu">
+          <li><%= link_to 'Cost Setup', cost_setups_path %></li>
+          <li><%= link_to 'Department Setup', departments_path %></li>
+          <li><%= link_to 'Report Builder',admin_setup_report_builder_path %></li>
+          <li><%= link_to 'Transport Setup', transport_setups_path %></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <%= link_to do %>
+            <i class='fa fa-link'></i>
+            <span>Forms</span>
+            <i class='fa fa-angle-left pull-right'></i>
+        <% end %>
+        <ul class="treeview-menu">
+          <li><%= link_to 'Order Confirmation', new_order_confirmation_path %></li>
+          <li><%= link_to 'Phamarcy Board', new_ppb_path %></li>
+          <li><%= link_to 'Kentrade', new_kentrade_path %></li>
+          <li><%= link_to 'Insurance',new_insurance_path %></li>
+          <li><%= link_to 'Customs Service Department', new_customs_service_department_path %></li>
+          <li><%= link_to 'File Number', new_file_information_path %></li>
+          <li><%= link_to 'File Number Information', new_shipment_path %></li>
+          <li><%= link_to 'Order Information', new_order_path %></li>
+
+        </ul>
+      </li>
+
+       <li class="treeview">
+        <%= link_to do %>
+            <i class='fa fa-link'></i>
+            <span>Tables</span>
+            <i class='fa fa-angle-left pull-right'></i>
+        <% end %>
+        <ul class="treeview-menu">
+          <li><%= link_to 'Order Confirmation', order_confirmations_path %></li>
+          <li><%= link_to 'Orders', orders_path %></li>
+          <li><%= link_to 'Report Builder','#' %></li>
+          <li><%= link_to 'Customs Service Department', customs_service_departments_path %></li>
+        </ul>
+      </li>
+      <li>
+        <%= link_to company_setups_path do %>
+          <i class='fa fa-link'></i>
+          <span>Company Setup</span>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to supplier_setups_path do %>
+          <i class='fa fa-link'></i>
+          <span>Suppliers Setup</span>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to inventories_path do %>
+          <i class='fa fa-link'></i>
+          <span>Inventory Setup</span>
+        <% end %>
+      </li>
+
+     
+
+      <li>
+        <%= link_to calculations_path do %>
+          <i class='fa fa-link'></i>
+          <span>Calculations</span>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to edit_user_registration_path do %>
+          <i class='fa fa-link'></i>
+          <span>My Account</span>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to destroy_user_session_path, :method => :delete do %>
+          <i class='fa fa-power-off'></i>
+          <span>Logout</span>
+        <% end %>
+      </li>
+    </ul><!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>

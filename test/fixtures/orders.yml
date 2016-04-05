@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: MyString
+  lots: 1
+  quantity: 9.99
+  price: 9.99
+  rate: 9.99
+  total_freight_usd: 9.99
+  total_insurance_Kes: 9.99
+  total_pre_idf: 9.99
+  total_idf_bal: 9.99
+  total_railway_levy: 9.99
+  total_kaa_levy: 9.99
+  total_shipping_line_charges: 9.99
+  total_transport_from_msa: 9.99
+  total_port_handling_charges: 9.99
+  total_offloading_expenses: 9.99
+  total_bank_charges: 9.99
+  total_services_charges: 9.99
+  total_other_costs: 9.99
+
+two:
+  product: MyString
+  lots: 1
+  quantity: 9.99
+  price: 9.99
+  rate: 9.99
+  total_freight_usd: 9.99
+  total_insurance_Kes: 9.99
+  total_pre_idf: 9.99
+  total_idf_bal: 9.99
+  total_railway_levy: 9.99
+  total_kaa_levy: 9.99
+  total_shipping_line_charges: 9.99
+  total_transport_from_msa: 9.99
+  total_port_handling_charges: 9.99
+  total_offloading_expenses: 9.99
+  total_bank_charges: 9.99
+  total_services_charges: 9.99
+  total_other_costs: 9.99

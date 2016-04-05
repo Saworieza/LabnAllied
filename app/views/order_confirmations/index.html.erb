@@ -1,0 +1,99 @@
+<% @title="Order Confirmations" %>
+<p id="notice"><%= notice %></p>
+ <% @title="Kentrades" %>
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12">
+  <div class="box">
+    <div class="box-header with-border">
+      <h1 class="box-title">Order Confirmation Listings</h1>
+      
+      <h3 class="box-title pull-right"><%= link_to "print File Information",order_confirmations_path(@order, format: "pdf"), class: "btn btn-success btn-sm" %></h3>
+      
+      <h3 class="box-title pull-right ">
+        <%= link_to 'New Order Confirmation', new_order_confirmation_path, class: "btn btn-warning btn-sm" %>
+      </h3>
+    </div>
+    <div class="box-body table-responsive">
+      <table class="table table-bordered">
+
+                <thead>
+                  <tr>
+                    <th>Sellers</th>
+                    <th>Sellers bankers</th>
+                    <th>Buyers bankers</th>
+                    <th>Idf no</th>
+                    <th>Insurance to be</th>
+                    <th>Mode of transport</th>
+                    <th>P.order no</th>
+                    <th>Proforma nos</th>
+                    <th>Terms of payment</th>
+                    <th>Country of origin</th>
+                    <th>Inspection agency</th>
+                    <th>Country of inspection</th>
+                    <th>Country of supply</th>
+                    <th>Shipment date</th>
+                    <th>Port of loading</th>
+                    <th>Port of discharge</th>
+                    <th>Final destination</th>
+                    <th>Shipping marks order nos</th>
+                    <th>Container type</th>
+                    <th>Code</th>
+                    <th>Item description</th>
+                    <th>Supplier item description</th>
+                    <th>Hscode no</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                    <th>Total amount decimal</th>
+                    <th colspan="3"></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @order_confirmations.each do |order_confirmation| %>
+                    <tr>
+                      <td><%= order_confirmation.sellers %></td>
+                      <td><%= order_confirmation.sellers_bankers %></td>
+                      <td><%= order_confirmation.buyers_bankers %></td>
+                      <td><%= order_confirmation.IDF_No %></td>
+                      <td><%= order_confirmation.insurance_to_be %></td>
+                      <td><%= order_confirmation.transport_setup.transport_mode %></td>
+                      <td><%= order_confirmation.p_order_No %></td>
+                      <td><%= order_confirmation.proforma_nos %></td>
+                      <td><%= order_confirmation.terms_of_payment %></td>
+                      <td><%= order_confirmation.country_of_origin %></td>
+                      <td><%= order_confirmation.inspection_agency %></td>
+                      <td><%= order_confirmation.country_of_inspection %></td>
+                      <td><%= order_confirmation.country_of_supply %></td>
+                      <td><%= order_confirmation.shipment_date %></td>
+
+                      <td><%= order_confirmation.transport_setup.port_of_loading %></td>
+                      <td><%= order_confirmation.transport_setup.port_of_dischange %></td>
+                      <td><%= order_confirmation.transport_setup.final_destination %></td>
+
+                      <td><%= order_confirmation.shipping_marks_order_nos %></td>
+
+                      <td><%= order_confirmation.transport_setup.container_type %></td>
+
+                      <td><%= order_confirmation.code %></td>
+                      <td><%= order_confirmation.item_description %></td>
+                      <td><%= order_confirmation.supplier_item_description %></td>
+                      <td><%= order_confirmation.HScode_No %></td>
+
+                      <td><%= order_confirmation.quantity %></td>
+                      <td><%= order_confirmation.unit_price %></td>
+                      <td><%= order_confirmation.total_amount_decimal %></td>
+                      <td><%= link_to 'Show', order_confirmation %></td>
+                      <td><%= link_to 'Edit', edit_order_confirmation_path(order_confirmation) %></td>
+                      
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  </div>

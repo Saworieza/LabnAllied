@@ -1,0 +1,255 @@
+<%= simple_form_for @order_confirmation do |f| %>
+  <% if @order_confirmation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order_confirmation.errors.count, "error") %> prohibited this order_confirmation from being saved:</h2>
+
+      <ul>
+      <% @order_confirmation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   
+
+<div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">Select2</h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+              </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputFile">Sellers</label>
+                    <%= f.text_area :sellers, :step => 'any', class: 'form-control' %>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputFile">Sellers Bankers</label>
+                    <%= f.text_area :sellers_bankers, :step => 'any', class: 'form-control' %>
+                  </div>
+                </div><!-- /.col -->
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputFile">Lab n Allied Address Field</label>
+                    <%#= f.text_area :buyers_bankers, :step => 'any', class: 'form-control' %>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">Buyers Bankers</label>
+                    <%= f.text_area :buyers_bankers, :step => 'any', class: 'form-control' %>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleInputFile">Date</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleInputFile">IDF No</label>
+                        <%= f.number_field :IDF_No, :step => 'any', class: 'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.col -->
+              </div><!-- /.row -->
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+              Banking Details
+            </div>
+          </div><!-- /.box -->
+
+<div class="box box-default">
+  <div class="box-header with-border">
+    <h3 class="box-title">Select2</h3>
+    <div class="box-tools pull-right">
+      <button class="btn btn-box-tool" data-widget="collapse">
+        <i class="fa fa-minus"></i>
+      </button>
+      <button class="btn btn-box-tool" data-widget="remove">
+        <i class="fa fa-remove"></i>
+      </button>
+    </div>
+  </div><!-- /.box-header -->
+  <div class="box-body">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="exampleInputFile">Insurance To Be</label>
+          <%= f.text_field :insurance_to_be, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="exampleInputFile">Mode of Transport</label>
+          <%= collection_select( :order_confirmation, :transport_setup_id,  TransportSetup.all, :id, :transport_mode, {}, {:multiple => false, class: "form-control select2"}) %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+         <label for="exampleInputFile">Purchase Order Number</label>
+          <%= f.text_field :p_order_No,  :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="exampleInputFile">Your Proforma No</label>
+          <%= f.text_field :proforma_nos, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label for="exampleInputFile">Terms Of Payment</label>
+          <%= f.text_field :terms_of_payment, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="form-group">
+          <label for="exampleInputFile">Ctry Of Origin </label>
+          <%= f.text_field :country_of_origin, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label for="exampleInputFile">Inspection Agency</label>
+          <%= f.text_field :inspection_agency, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="form-group">
+          <label for="exampleInputFile">Inspection Ctry</label>
+          <%= f.text_field :country_of_inspection, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="form-group">
+          <label for="exampleInputFile">Ctry of Supply</label>
+          <%= f.text_field :country_of_supply, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label for="exampleInputFile">Shipment Date</label>
+          <%= f.date_select :shipment_date, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="form-group">
+          <label for="exampleInputFile">Loading Port</label>
+          <%= collection_select( :order_confirmation, :transport_setup_id,  TransportSetup.all, :id, :port_of_loading, {}, {:multiple => false, class: "form-control select2"}) %>
+          <%#= f.text_field :port_of_loading, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="form-group">
+          <label for="exampleInputFile">Discharge Port</label>
+          <%= collection_select( :order_confirmation, :transport_setup_id,  TransportSetup.all, :id, :port_of_dischange, {}, {:multiple => false, class: "form-control select2"}) %>
+          <%#= f.text_field :port_of_discharge, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="form-group">
+          <label for="exampleInputFile">Final Destination</label>
+          <%= collection_select( :order_confirmation, :transport_setup_id,  TransportSetup.all, :id, :final_destination, {}, {:multiple => false, class: "form-control select2"}) %>
+          <%#= f.text_field :final_destination, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label for="exampleInputFile">Shipping Marks Orders Nos</label>
+          <%= f.text_field :shipping_marks_order_nos, :step => 'any', class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box-footer">
+    Banking Details
+  </div>
+</div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Container Type</label>
+    <%= collection_select( :order_confirmation, :transport_setup_id,  TransportSetup.all, :id, :container_type, {}, {:multiple => false, class: "form-control select2"}) %>
+    <%#= f.text_field :container_type, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Code</label>
+    <%= collection_select( :order_confirmation, :inventory_id,  Inventory.all, :id, :code, {}, {:multiple => false, class: "form-control select2"}) %>
+    <%#= f.number_field :code, :step => 'any', class: 'form-control' %>
+  </div>
+
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Simple Full Width Table</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body no-padding">
+      <table class="table">
+        <tr>
+          <th style="width: ">Quantity</th>
+          <th>Description</th>
+          <th>H.S Code No</th>
+          <th style="width: ">Unit Price</th>
+          <th>Total Amount</th>
+        </tr>
+        <tr>
+          <td style="width:20%;">
+            <%= f.text_field :quantity, :step => 'any', class: 'form-control' %>
+          </td>
+          <td style="width:20%;">
+            <%= f.text_area :item_description, :step => 'any', class: 'form-control' %>
+            <%= f.text_area :supplier_item_description, :step => 'any', class: 'form-control' %>
+          </td>
+          <td style="width:20%;" >
+            <%= collection_select( :order_confirmation, :inventory_id,  Inventory.all, :id, :HS_codes, {}, {:multiple => false, class: "form-control select2"}) %>
+          </td>
+          <td style="width:20%;">
+            <%= f.text_field :unit_price, :step => 'any', class: 'form-control' %>
+          </td>
+          <td style="width:20%;">
+            <%= f.text_field :total_amount_decimal, :step => 'any', class: 'form-control' %>
+          </td>
+          <!--<td><span class="badge bg-red">55%</span></td>-->
+        </tr>
+      </table>
+    </div><!-- /.box-body -->
+  </div><!-- /.box -->
+
+ <div class="well">
+ <!-- what the f** -->
+  <div id='Orders'>
+    <%#= f.simple_fields_for :orders do |ord| %>
+       <%#= render 'order_fields', f: ord %>
+       <%# end %>
+       <div class='links'>
+          <%#= link_to_add_association 'add Product', f, :orders %>
+       </div>
+  </div>
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

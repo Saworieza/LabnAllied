@@ -1,0 +1,2 @@
+module KentradesHelper
+end

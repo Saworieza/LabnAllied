@@ -1,0 +1,44 @@
+    <table>
+      <thead>
+      <tr>
+        <th>Product</th>
+      </tr>  
+      </thead>
+      <tbody>
+
+      <% @shipments.each do |ships| %>
+      <% if ships.shared = true %>
+      <% ships.orders.each do |ords| %>
+        <% cost_usd = ords.lots * ords.quantity * ords.price %>
+        <% cost_KES = cost_usd * ords.rate%>
+        <% co = cost_usd / ships.total_cost_usd  %>
+        <% frght_USD = co * ships.total_freight_usd %>
+        <% frght_KES = frght_USD * ords.rate %>
+        <% cf_KES = frght_KES + cost_KES %>
+        <% ins_KES = co * ships.total_insurance_Kes %>
+        <% cFI = cf_KES + ins_KES %>
+        <% pre_idf = co * ships.total_pre_idf %>
+        <% idf_bal = co * ships.total_idf_bal %>
+        <% railway_levy = co * ships.total_railway_levy %>
+        <% kaa_levy = co * ships.total_kaa_levy %>
+        <% shipi_charges = co * ships.total_shipping_line_charges %>
+        <% from_msa = co * ships.total_transport_from_msa %>
+        <% port_handlin = co * ships.total_port_handling_charges %>
+        <% offlod= co * ships.total_offloading_expenses %>
+        <% bank_charges = co * ships.total_bank_charges %>
+        <% ser_expens = co * ships.total_services_charges %>
+        <% total_other = pre_idf+idf_bal+railway_levy+kaa_levy+shipi_charges+from_msa+port_handlin+offlod+bank_charges+ser_expens %>
+        <% total_costs = frght_KES + ins_KES + total_other %>
+        <% landed = total_costs/(ords.quantity/ords.lots) %>
+        <tr>
+          <td>
+            <%= ords.product %>
+          </td>
+        </tr>
+
+         <% end %>
+    <% end %>
+  <% end %>
+      </tbody>
+     
+    </table>

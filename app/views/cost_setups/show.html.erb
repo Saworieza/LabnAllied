@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cost code:</strong>
+  <%= @cost_setup.cost_code %>
+</p>
+
+<p>
+  <strong>Cost type:</strong>
+  <%= @cost_setup.cost_type %>
+</p>
+
+<p>
+  <strong>Cost type setup:</strong>
+  <%= @cost_setup.cost_type_setup %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @cost_setup.currency %>
+</p>
+
+<p>
+  <strong>Currency rate:</strong>
+  <%= @cost_setup.currency_rate %>
+</p>
+
+<%= link_to 'Edit', edit_cost_setup_path(@cost_setup) %> |
+<%= link_to 'Back', cost_setups_path %>

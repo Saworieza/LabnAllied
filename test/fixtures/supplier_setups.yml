@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supplier_name: MyString
+  description: MyText
+  address: MyText
+  banking_details: MyText
+  bus_type: 1
+  bus_type: MyString
+  country_id: 1
+  country_name: MyString
+  bus_clasification: 1
+  notes: MyText
+
+two:
+  supplier_name: MyString
+  description: MyText
+  address: MyText
+  banking_details: MyText
+  bus_type: 1
+  bus_type: MyString
+  country_id: 1
+  country_name: MyString
+  bus_clasification: 1
+  notes: MyText

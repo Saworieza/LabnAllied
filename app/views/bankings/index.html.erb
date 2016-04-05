@@ -1,0 +1,51 @@
+<% @title="Bankings" %>
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12">
+  <div class="box">
+    <div class="box-header with-border">
+      <h1 class="box-title">Banking Listings</h1>
+    
+      <h3 class="box-title pull-right ">
+        <%= link_to "New Company Setup", new_banking_path, class: "btn btn-warning btn-sm" %>
+      </h3>
+    </div>
+    <div class="box-body">
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th>Bank name</th>
+          <th>Bank branch</th>
+          <th>Account number</th>
+          <th>Branch code</th>
+          <th>Branch description</th>
+          <th>Swift code</th>
+          <th>Other details</th>
+          <th>Email</th>
+          <th colspan="2"></th>
+        </tr>
+        <% @bankings.each do |banking| %>
+          <tr>
+            <td><%= banking.bank_name %></td>
+            <td><%= banking.bank_branch %></td>
+            <td><%= banking.Account_number %></td>
+            <td><%= banking.branch_code %></td>
+            <td><%= banking.branch_description %></td>
+            <td><%= banking.swift_code %></td>
+            <td><%= banking.other_details %></td>
+            <td><%= banking.email %></td>
+            <td><%= link_to 'Show', banking %></td>
+            <td><%= link_to 'Delete', banking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><%= will_paginate @bankings, renderer: BootstrapPagination::Rails %></li>
+      </ul>
+    </div>
+  </div><!-- /.box -->
+</div><!-- /.col -->
+
+
+

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  file_number: MyString
+  idf_date: 2016-01-29
+
+two:
+  file_number: MyString
+  idf_date: 2016-01-29

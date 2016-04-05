@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transport_mode: MyString
+  port_of_loading: MyString
+  port_of_dischange: MyString
+  final_destination: MyString
+  clearing_agent: MyString
+  container_type: MyString
+
+two:
+  transport_mode: MyString
+  port_of_loading: MyString
+  port_of_dischange: MyString
+  final_destination: MyString
+  clearing_agent: MyString
+  container_type: MyString

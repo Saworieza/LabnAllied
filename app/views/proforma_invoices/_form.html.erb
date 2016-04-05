@@ -1,0 +1,35 @@
+<%= form_for(@proforma_invoice) do |f| %>
+  <% if @proforma_invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@proforma_invoice.errors.count, "error") %> prohibited this proforma_invoce from being saved:</h2>
+
+      <ul>
+      <% @proforma_invoice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label for="exampleInputFile">Supplier Name</label>
+    <%= f.text_field :supplier_name, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Profoma Invoice Nos</label>
+    <%= f.text_field :proforma_invoice_nos, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Date</label>
+    <%= f.date_select :pfi_date, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <label for="exampleInputFile">Avatar</label>
+    <%= f.file_field :avatar, :step => 'any', class: 'form-control' %>
+  <% end %>
+
+  <div class="box-footer">
+    <%= f.submit "Submit", class: "btn btn-success btn-sm" %>
+      <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  </div>
+<% end %>

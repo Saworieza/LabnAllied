@@ -1,0 +1,27 @@
+<div class="content">
+    <section class="content">
+    	<div class="row">
+        	<div class="col-md-6">
+          		<div class="box box-primary">
+            		<div class="box-body">
+					
+					<p id="notice"><%= notice %></p>
+
+				<p>
+				  <strong>Bl number:</strong>
+				  <%= @bill_of_lading.bl_number %>
+				</p>
+
+				<p>
+				  <strong>Bl date:</strong>
+				  <%= @bill_of_lading.bl_date %>
+				</p>
+
+				<%= link_to 'Edit', edit_bill_of_lading_path(@bill_of_lading) %> |
+				<%= link_to 'Back', bill_of_ladings_path %>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

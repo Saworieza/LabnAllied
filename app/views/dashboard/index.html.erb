@@ -1,0 +1,72 @@
+<% @title="Dashboard" %> 
+<!-- bootstrap is already installed, why did you include this again? #justAsking. -->          
+<%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+
+<div class="row">
+  <div class=" col-lg-6">
+    <div class="box-header">
+      <h3 class="box-title">Purchased Products</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body">
+     <%= pie_chart Order.group(:lots).count %> 
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="box-header">
+      <h3 class="box-title">Country of Imports</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body">
+     <%= geo_chart Shipment.group(:country_of_origin).count %> 
+    </div>
+  </div>
+</div>
+
+<div class="boxy col-lg-6">
+  <div class="box-header">
+    <h3 class="box-title">Shipped</h3>
+  </div><!-- /.box-header -->
+  <div class="box-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>File Number</th>
+          <th>Split?</th>
+          </tr>
+      </thead>
+      <tbody>
+        <%@shipments.each do |ship| %>
+          <tr>
+            <td><% %></td>
+            <td><%= ship.shared %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div><!-- /.box-body -->
+</div><!-- /.box -->
+
+<div class="boxy col-lg-6">
+  <div class="box-header">
+    <h3 class="box-title">Pending Shipments</h3>
+  </div><!-- /.box-header -->
+  <div class="box-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>File Number</th>
+          <th>Split?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%@shipments.each do |ship| %>
+        <tr>
+          <td><% %></td>
+          <td><%= ship.shared %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div><!-- /.box-body -->
+</div><!-- /.box -->

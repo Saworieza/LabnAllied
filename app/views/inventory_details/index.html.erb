@@ -1,0 +1,54 @@
+<% @title="Inventory Details" %>
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12">
+  <div class="box">
+    <div class="box-header with-border">
+      <h1 class="box-title">Inventory Detail Listings</h1>
+    
+      <h3 class="box-title pull-right ">
+        <%= link_to 'Add Inventory Detail', new_inventory_detail_path, class: "btn btn-warning btn-sm" %>
+      </h3>
+    </div>
+    <div class="box-body table-responsive">
+      <table class="table table-bordered">
+        <tr>
+          <th>Inventory code</th>
+          <th>Inventory description</th>
+          <th>Warehouse code</th>
+          <th>Inventory warehouse</th>
+          <th>Inventory groups</th>
+          <th>Hs codes</th>
+          <th>Inventory unit price</th>
+          <th>Inventory qty</th>
+          <th>Inventory uom</th>
+          <th>Inventory category</th>
+          <th colspan="2"></th>
+        <tr>
+        <% @inventory_details.each do |inventory_detail| %>
+        <tr>
+          <td><%= inventory_detail.inventory_code %></td>
+          <td><%= inventory_detail.inventory_description %></td>
+          <td><%= inventory_detail.warehouse_code %></td>
+          <td><%= inventory_detail.inventory_warehouse %></td>
+          <td><%= inventory_detail.inventory_groups %></td>
+          <td><%= inventory_detail.HS_codes %></td>
+          <td><%= inventory_detail.inventory_unit_price %></td>
+          <td><%= inventory_detail.inventory_qty %></td>
+          <td><%= inventory_detail.inventory_UoM %></td>
+          <td><%= inventory_detail.inventory_category %></td>
+          <td><%= link_to 'Show', inventory_detail %></td>
+          <td><%= link_to 'Delete', inventory_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+        </tr>
+      </table>
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><%= will_paginate @inventory_details, renderer: BootstrapPagination::Rails %></li>
+      </ul>
+    </div>
+  </div><!-- /.box -->
+</div><!-- /.col -->
+

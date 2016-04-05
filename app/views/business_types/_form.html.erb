@@ -1,0 +1,22 @@
+<%= form_for(@business_type) do |f| %>
+  <% if @business_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business_type.errors.count, "error") %> prohibited this business_type from being saved:</h2>
+
+      <ul>
+      <% @business_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Business Type</label>
+    <%= f.text_area :business_type, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="box-footer">
+    <%= f.submit "Submit", class: "btn btn-success btn-sm" %>
+      <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  </div> 
+<% end %>

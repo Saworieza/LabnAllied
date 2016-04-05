@@ -1,0 +1,67 @@
+<% @title="Simba Systems" %>
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12">
+  <div class="box">
+    <div class="box-header with-border">
+      <h1 class="box-title">Simba System Listings</h1>
+    
+      <h3 class="box-title pull-right ">
+        <%= link_to 'New Simba System', new_simba_system_path, class: "btn btn-warning btn-sm" %>
+      </h3>
+    </div>
+    <div class="box-body table-responsive">
+      <table class="table table-bordered">
+        <tr>
+          <th>Customs entry number</th>
+          <th>Customs entry date</th>
+          <th>Exchange rate</th>
+          <th>Total freight usd</th>
+          <th>Total insurance kes</th>
+          <th>Total pre idf</th>
+          <th>Total railway levy</th>
+          <th>Total kaa levy</th>
+          <th>Total shipping line charges</th>
+          <th>Total transport from msa</th>
+          <th>Total port handling charges</th>
+          <th>Total offloading expenses</th>
+          <th>Total bank charges</th>
+          <th>Total services charges</th>
+          <th>Documents handling charges</th>
+          <th>Total other costs</th>
+          <th colspan="2"></th>
+        </tr>
+        <% @simba_systems.each do |simba_system| %>
+          <tr>
+            <td><%= simba_system.customs_entry_number %></td>
+            <td><%= simba_system.customs_entry_date %></td>
+            <td><%= simba_system.exchange_rate %></td>
+            <td><%= simba_system.total_freight_usd %></td>
+            <td><%= simba_system.total_insurance_Kes %></td>
+            <td><%= simba_system.total_pre_idf %></td>
+            <td><%= simba_system.total_railway_levy %></td>
+            <td><%= simba_system.total_kaa_levy %></td>
+            <td><%= simba_system.total_shipping_line_charges %></td>
+            <td><%= simba_system.total_transport_from_msa %></td>
+            <td><%= simba_system.total_port_handling_charges %></td>
+            <td><%= simba_system.total_offloading_expenses %></td>
+            <td><%= simba_system.total_bank_charges %></td>
+            <td><%= simba_system.total_services_charges %></td>
+            <td><%= simba_system.documents_handling_charges %></td>
+            <td><%= simba_system.total_other_costs %></td>
+            <td><%= link_to 'Show', simba_system %></td>
+            <td><%= link_to 'Delete', simba_system, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        </tr>
+      </table>
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix">
+      <ul class="pagination pagination-sm no-margin pull-right">
+        <li><%= will_paginate @simba_systsems, renderer: BootstrapPagination::Rails %></li>
+      </ul>
+    </div>
+  </div><!-- /.box -->
+</div><!-- /.col -->
+
+ 

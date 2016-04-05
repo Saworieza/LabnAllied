@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @ppb.avatar.url(:medium) %>
+</p>
+<p>
+  <strong>Ucr number:</strong>
+  <%= @ppb.UCR_Number %>
+</p>
+
+<p>
+  <strong>Application date:</strong>
+  <%= @ppb.application_date %>
+</p>
+
+<%= link_to 'Edit', edit_ppb_path(@ppb) %> |
+<%= link_to 'Back', ppbs_path %>

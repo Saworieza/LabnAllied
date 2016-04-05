@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Transport mode:</strong>
+  <%= @transport_setup.transport_mode %>
+</p>
+
+<p>
+  <strong>Port of loading:</strong>
+  <%= @transport_setup.port_of_loading %>
+</p>
+
+<p>
+  <strong>Port of dischange:</strong>
+  <%= @transport_setup.port_of_dischange %>
+</p>
+
+<p>
+  <strong>Final destination:</strong>
+  <%= @transport_setup.final_destination %>
+</p>
+
+<p>
+  <strong>Clearing agent:</strong>
+  <%= @transport_setup.clearing_agent %>
+</p>
+
+<p>
+  <strong>Container type:</strong>
+  <%= @transport_setup.container_type %>
+</p>
+
+<%= link_to 'Edit', edit_transport_setup_path(@transport_setup) %> |
+<%= link_to 'Back', transport_setups_path %>

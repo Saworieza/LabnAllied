@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Supplier name:</strong>
+  <%= @proforma_invoice.supplier_name %>
+</p>
+
+<p>
+  <strong>Proforma invoice nos:</strong>
+  <%= @proforma_invoice.proforma_invoice_nos %>
+</p>
+
+<p>
+  <strong>Pfi date:</strong>
+  <%= @proforma_invoice.pfi_date %>
+</p>
+
+<%= link_to 'Edit', edit_proforma_invoice_path(@proforma_invoice) %> |
+<%= link_to 'Back', proforma_invoices_path %>

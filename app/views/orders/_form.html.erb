@@ -1,0 +1,52 @@
+  <!--form role="form">-->
+<%= form_for(@order) do |f|%>
+
+   <% if @order.errors.any? %>
+     <div class="alert alert-warning" role="alert">
+       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+       <ul>
+         <% @order.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+         <% end %>
+       </ul>
+     </div>
+  <% end %>
+   
+    <div class="form-group">
+       <label for="exampleInputFile">File Number</label>
+       <%= f.number_field :file_information_id, :step => 'any', class: 'form-control' %>
+     </div>
+
+   <div class="box-body">
+     <div class="form-group">
+       <label for="exampleInputEmail1">Product</label>
+       <%= f.text_field :product, :step => 'any', class: 'form-control' %>
+     </div>
+    <div class="form-group">
+       <label for="exampleInputPassword1">Lots</label>
+       <%= f.number_field :lots, class: 'form-control',:step => 'any' %>
+     </div>
+     <div class="form-group">
+       <label for="exampleInputFile">Quantity</label>
+      <%= f.number_field :quantity , class: 'form-control',:step => 'any' %>
+     </div>
+     <div class="form-group">
+       <label for="exampleInputFile">Price</label>
+       <%= f.number_field :price, :step => 'any',class: 'form-control' %>
+     </div>
+     <div class="form-group">
+       <label for="exampleInputFile">Rate</label>
+       <%= f.number_field :rate, :step => 'any', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+       <label for="exampleInputFile">shipment Number</label>
+       <%= f.number_field :shipment_id, :step => 'any', class: 'form-control' %>
+    </div>
+    
+    <div class="box-footer">
+    <%= f.submit "Submit", class: "btn btn-success btn-sm" %>
+      <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  </div>
+<% end %>     
+

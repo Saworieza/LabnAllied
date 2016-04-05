@@ -1,0 +1,54 @@
+<div class="jumbotron">
+  <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country of origin:</strong>
+  <%= @shipment.country_of_origin %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @shipment.supplier %>
+</p>
+
+<p>
+  <strong>Supply nature:</strong>
+  <%= @shipment.supply_nature %>
+</p>
+
+<p>
+  <strong>Custom entry nos:</strong>
+  <%= @shipment.custom_entry_nos %>
+</p>
+
+<p>
+  <strong>Custom exchange rate:</strong>
+  <%= @shipment.custom_exchange_rate %>
+</p>
+
+<p>
+  <strong>Custom value:</strong>
+  <%= @shipment.custom_value %>
+</p>
+
+<p>
+  <strong>Agent inv nos:</strong>
+  <%= @shipment.agent_inv_nos %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @shipment.Quantity %>
+</p>
+
+<p>
+  <strong>Total cost usd:</strong>
+  <%= @shipment.total_cost_usd %>
+</p>
+
+<%= link_to('Edit',edit_shipment_path(@shipment), class: 'btn-info btn-lg')  %></td>
+<%= link_to shipments_path , class: "btn btn-info" do %>
+    <span class="glyphicon glyphicon-step-backward"></span> Back
+<% end %>
+
+</div>

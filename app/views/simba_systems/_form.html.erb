@@ -1,0 +1,91 @@
+<%= form_for(@simba_system) do |f| %>
+  <% if @simba_system.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@simba_system.errors.count, "error") %> prohibited this simba_system from being saved:</h2>
+
+      <ul>
+      <% @simba_system.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label for="exampleInputFile">Customs Entry Name</label>
+    <%= f.text_field :customs_entry_number, :step => 'any', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <label>Customs Entry Date:</label>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-calendar"></i>
+      </div>
+      <%= f.date_select :customs_entry_date, :step => 'any' %>
+      <%#= f.date_select :application_date, :step => 'any', class: 'form-control' %>
+      <!--<input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text">-->
+    </div><!-- /.input group -->
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Exchange Rate</label>
+    <%= f.text_field :exchange_rate, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Freight Usd</label>
+    <%= f.text_field :total_freight_usd, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Insurance Kes</label>
+    <%= f.text_field :total_insurance_Kes, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Pre IDF</label>
+    <%= f.text_field :total_pre_idf, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Railway Levy</label>
+    <%= f.text_field :total_railway_levy, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total KAA Levy</label>
+    <%= f.text_field :total_kaa_levy, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Shipping Line Charges</label>
+    <%= f.text_field :total_shipping_line_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Transport From MSA</label>
+    <%= f.text_field :total_transport_from_msa, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Port Handling Charges</label>
+    <%= f.text_field :total_port_handling_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Offloading Expenses</label>
+    <%= f.text_field :total_offloading_expenses, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Bank Charges</label>
+    <%= f.text_field :total_bank_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Services Charges</label>
+    <%= f.text_field :total_services_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Documents Handling Charges</label>
+    <%= f.text_field :documents_handling_charges, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Total Other Costs</label>
+    <%= f.text_field :total_other_costs, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="box-footer">
+    <%= f.submit "Submit", class: "btn btn-success btn-sm" %>
+      <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  </div>  
+<% end %>

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  description1: MyString
+  description2: MyString
+  warehouse_code: 1
+  inventory_warehouse: MyString
+  inventory_groups: MyString
+  HS_codes: 1
+  inventory_price: 9.99
+  quantity: 9.99
+  inventory_uom: MyString
+  category: MyString
+
+two:
+  code: MyString
+  description1: MyString
+  description2: MyString
+  warehouse_code: 1
+  inventory_warehouse: MyString
+  inventory_groups: MyString
+  HS_codes: 1
+  inventory_price: 9.99
+  quantity: 9.99
+  inventory_uom: MyString
+  category: MyString

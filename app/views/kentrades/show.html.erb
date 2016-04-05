@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idf document fee:</strong>
+  <%= @kentrade.idf_document_fee %>
+</p>
+
+<p>
+  <strong>Payment date:</strong>
+  <%= @kentrade.payment_date %>
+</p>
+
+<%= link_to 'Edit', edit_kentrade_path(@kentrade) %> |
+<%= link_to 'Back', kentrades_path %>

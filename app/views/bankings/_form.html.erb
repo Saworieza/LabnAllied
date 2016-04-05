@@ -1,0 +1,52 @@
+<%= form_for(@banking) do |f| %>
+  <% if @banking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@banking.errors.count, "error") %> prohibited this banking from being saved:</h2>
+
+      <ul>
+      <% @banking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Bank Name</label>
+    <%= f.text_field :bank_name, :step => 'any', class: 'form-control' %>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Bank Branch</label>
+    <%= f.text_field :bank_branch, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Account Number</label>
+    <%= f.number_field :Account_number, :step => 'any', class: 'form-control' %>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Branch Code</label>
+    <%= f.number_field :branch_code, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Branch Description</label>
+    <%= f.text_area :branch_description, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Swift Code</label>
+    <%= f.number_field :swift_code, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Other Details</label>
+    <%= f.text_area :other_details, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <%= f.text_area :email, :step => 'any', class: 'form-control' %>
+  </div>
+
+  <div class="box-footer">
+    <%= f.submit "Submit", class: "btn btn-success btn-sm" %>
+      <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  </div>  
+
+<% end %>

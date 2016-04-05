@@ -1,0 +1,73 @@
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <label for="exampleInputFile">Code</label>
+    <%= f.text_field :code, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Description 1</label>
+    <%= f.text_field :description1, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Description 2</label>
+    <%= f.text_field :description2, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Warehouse Code</label>
+    <%= f.number_field :warehouse_code, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Inventory Warehouse</label>
+    <%= f.text_field :inventory_warehouse, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Inventory Groups</label>
+    <%= f.text_field :inventory_groups, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">HS Codes</label>
+    <%= f.number_field :HS_codes, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Inventory Price</label>
+    <%= f.text_field :inventory_price, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Quantity</label>
+    <%= f.text_field :quantity, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Inventory UOM</label>
+    <%= f.text_field :inventory_uom, :step => 'any', class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputFile">Category</label>
+    <%= f.text_field :category, :step => 'any', class: 'form-control' %>
+  </div>
+  <div class="box-footer">
+    <%= f.submit "Submit", class: "btn btn-success btn-sm" %>
+      <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  </div>
+<% end %>

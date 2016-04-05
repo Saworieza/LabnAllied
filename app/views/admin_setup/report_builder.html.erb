@@ -1,0 +1,28 @@
+<%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h3>Products,price barchart</h3>
+     <%= bar_chart Order.group(:product).sum(:price) %>
+  </div>
+
+   <div class="col-xs-6">
+    <h3>Products,Quantity barchart</h3>
+     <%= bar_chart Order.group(:product).sum(:quantity) %>
+  </div>
+  <%= link_to "print order Information",orders_path(@order, format: "pdf") %>
+</div>
+
+<div class="row">
+ <div class="col-xs-6">
+    <h3>Country of Imports</h3>
+     <%= geo_chart Shipment.group(:country_of_origin).count %> 
+     <%= link_to "print File Information",shipments_path(@order, format: "pdf") %>
+  </div>
+</div>
+
+  <%= link_to "print order confirmation",order_confirmations_path(@order, format: "pdf") %>
+
+
+

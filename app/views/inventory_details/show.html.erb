@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Inventory code:</strong>
+  <%= @inventory_detail.inventory_code %>
+</p>
+
+<p>
+  <strong>Inventory description:</strong>
+  <%= @inventory_detail.inventory_description %>
+</p>
+
+<p>
+  <strong>Warehouse code:</strong>
+  <%= @inventory_detail.warehouse_code %>
+</p>
+
+<p>
+  <strong>Inventory warehouse:</strong>
+  <%= @inventory_detail.inventory_warehouse %>
+</p>
+
+<p>
+  <strong>Inventory groups:</strong>
+  <%= @inventory_detail.inventory_groups %>
+</p>
+
+<p>
+  <strong>Hs codes:</strong>
+  <%= @inventory_detail.HS_codes %>
+</p>
+
+<p>
+  <strong>Inventory unit price:</strong>
+  <%= @inventory_detail.inventory_unit_price %>
+</p>
+
+<p>
+  <strong>Inventory qty:</strong>
+  <%= @inventory_detail.inventory_qty %>
+</p>
+
+<p>
+  <strong>Inventory uom:</strong>
+  <%= @inventory_detail.inventory_UoM %>
+</p>
+
+<p>
+  <strong>Inventory category:</strong>
+  <%= @inventory_detail.inventory_category %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_detail_path(@inventory_detail) %> |
+<%= link_to 'Back', inventory_details_path %>

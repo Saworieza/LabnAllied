@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supplier_name: MyString
+  proforma_invoice_nos: MyString
+  pfi_date: 2016-01-17
+
+two:
+  supplier_name: MyString
+  proforma_invoice_nos: MyString
+  pfi_date: 2016-01-17
